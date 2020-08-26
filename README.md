@@ -26,7 +26,9 @@ Figure out what you need to change to give Javascript access to the `h1#header` 
 
 **YOUR NOTES**
 ```
+DOMContentLoaded event listener should wrap the code in index.js
 
+or just move all the script tags to the bottom of the html file -- I'll do this since there are two more deliverables.
 ```
 
 ## Deliverable 2
@@ -35,7 +37,9 @@ Now that you have access to the `h1#header` element, use Javascript to change th
 
 **YOUR NOTES**
 ```
+use the style property to set the color of h1#header:
 
+header.style.color = "red"
 ```
 
 ## Deliverable 3
@@ -57,6 +61,18 @@ Create a DOM element that looks like this for each player and append it to the `
 
 **YOUR NOTES**
 ```
+forEach player
+  1. playerDiv = createElement div
+  2. playerDiv.class = "player"
+  3. playerDiv.dataset.number = player.number //for the custom attribute: data-number = "(Player Number)"
+  4. h3 = createElement h3
+  5. h3.innerHTML = `${player.name} (<em>${player.nickname}</em>)`
+  6. playerDiv.append(h3)
+  7. img = createElement img
+  8. img.src = player.photo
+  9. img.alt = player.name
+  10. playerDiv.append(img)
+  11. playerContainer.append(playerDiv)
 
 ```
 
@@ -68,5 +84,7 @@ Hint: You can use `querySelector` with [CSS Attribute Selectors](https://develop
 
 **YOUR NOTES**
 ```
+let invader = document.querySelector("div[data-number='7']");
+invader.remove();
 
 ```
